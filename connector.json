@@ -1,0 +1,33 @@
+{
+    "name": "debezium-sample-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+        "tasks.max": "1",
+        "schema.history.internal.kafka.bootstrap.servers": "local-kafka:9092",
+        "schema.history.internal.kafka.topic": "schema-changes.test",
+        "internal.key.converter.schemas.enable": "false",
+        "include.schema.changes": "false",
+        "decimal.handling.mode": "double",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable": "false",
+        "topic.prefix": "debezium_cdc_topic",
+        "database.hostname": "mysql",
+        "database.port": "3306",
+        "database.user": "root",
+        "database.password": "password",
+        "database.server.id": "1",
+        "database.include.list": "test",
+        "table.include.list": "test.user",
+        "database.history.kafka.bootstrap.servers": "local-kafka:9092",
+        "database.history.kafka.topic": "schema-changes.test",
+        "event.processing.failure.handling.mode": "warn",
+        "database.connectionTimeZone": "UTC",
+        "inconsistent.schema.handling.mode": "warn",
+        "internal.key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "internal.value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "internal.value.converter.schemas.enable": "false",
+        "snapshot.mode": "initial"
+    }
+}
